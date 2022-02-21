@@ -1,0 +1,49 @@
+.navbar {
+  background-color: white;
+  padding: 20px;
+}
+
+.socials-icons {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.socials-icons li {
+  font-size: 30px;
+}
+.socials-icons li i {
+  &:hover {
+    color: rgb(75, 75, 75);
+  }
+}
+
+.socials-container {
+  padding: 10px;
+  justify-content: flex;
+  justify-items: center;
+}
+
+.info-text {
+  font-family: $future-font;
+  color: black;
+}
+
+.info-links {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.info-links li a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: rgb(75, 75, 75);
+  }
+}
