@@ -1,5 +1,6 @@
 class PlanetsController < ApplicationController
-  before_action :set_planet, only: [:show, :new, :create]
+  before_action :set_planet, only: [:show]
+
   def index
     @planets = Planet.all
   end
@@ -13,7 +14,7 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(set_params)
-    @planet.user = @user
+    @planet.user = current_user
     if @planet.save
       redirect_to planet_path(@planet)
     else
@@ -24,10 +25,10 @@ class PlanetsController < ApplicationController
   private
 
   def set_planet
-    @planet = planet.find(params[:id])
+    @planet = Planet.find(params[:id])
   end
 
   def set_params
-    require.params(:planet).permit(:name, :user_id)
+    params.require(:planet).permit(:name, :location)
   end
 end
