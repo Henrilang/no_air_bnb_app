@@ -2,8 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :planet
 
-  validates :start_date, :end_date, presence: true, availability: true
-  validate :end_date_after_start_date
+  validates :start_date, :end_date, presence: true
+  validates :end_date_after_start_date
 
   private
 
