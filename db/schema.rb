@@ -10,29 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_122950) do
+ActiveRecord::Schema.define(version: 2022_02_21_172921) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "planet_id", null: false
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "start_date"
-    t.date "end_date"
     t.index ["planet_id"], name: "index_bookings_on_planet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
-
+  
   create_table "planets", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.string "location"
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_planets_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,5 +48,4 @@ ActiveRecord::Schema.define(version: 2022_02_22_122950) do
 
   add_foreign_key "bookings", "planets"
   add_foreign_key "bookings", "users"
-  add_foreign_key "planets", "users"
 end
