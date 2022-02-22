@@ -35,5 +35,4 @@ end
     user_id: rand(1..50),
     planet_id: rand(1..8)
   )
-  puts "booking"
 end
