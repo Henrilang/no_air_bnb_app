@@ -16,7 +16,7 @@ require 'faker'
     password: "password1",
     email: "#{first_name}_#{last_name}#{rand(67..71)}@gmail.com"
   )
-  puts "planet"
+  puts "user"
 end
 
 8.times do
@@ -25,6 +25,7 @@ end
     location: Faker::Space.unique.galaxy,
     user_id: rand(1..50)
   )
+  puts "planet created"
 end
 
 50.times do
