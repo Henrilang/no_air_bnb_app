@@ -1,5 +1,5 @@
 class Planet < ApplicationRecord
-  belongs_to :users_id, through: :bookings
+  has_many :users, through: :bookings
 
   validates :name, presence: true, uniqueness: true
 end
