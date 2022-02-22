@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  has_many :bookings
   has_many :planets
 
   # Include default devise modules. Others available are:
