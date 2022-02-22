@@ -16,6 +16,7 @@ require 'faker'
     password: "password1",
     email: "#{first_name}_#{last_name}#{rand(67..71)}@gmail.com"
   )
+  puts "planet"
 end
 
 8.times do
@@ -33,4 +34,5 @@ end
     user_id: rand(1..50),
     planet_id: rand(1..8)
   )
+  puts "booking"
 end
