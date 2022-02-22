@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+10.times do
+  Planet.create(
+    name: Faker::Company.name,
+    location: Faker::Address.street_address,
+    user_id: 1
+  )
+end
+
+10.times do
+  Booking.create(
+    start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+    end_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+    user_id: 1,
+    planet_id: rand(1..10)
+  )
+end
