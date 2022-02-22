@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show]
   before_action :planet_params, only: [:new, :create]
 
   def new
@@ -9,7 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @booking.user = current_user
-    @booking.planet = planet.find(params[:planet_id])
+    @planet = Planet.find(params[:planet_id])
     @booking.planet = @planet
     if @booking.save
       redirect_to booking_path(@booking)
