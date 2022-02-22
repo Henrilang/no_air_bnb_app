@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :planets
-  get '/users/:id/bookings', to: 'users#bookings', as: "bookings"
-  resources :booking, only: [:new, :create]
+  resources :users, only: [:show]
+  resources :planets do
+    resources :bookings, only: [:new, :create]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
