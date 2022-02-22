@@ -13,5 +13,14 @@
 <li style="padding: 10px"><strong>Booker:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></li>
 <% end %>
 </ul>
+<h2>My planets:</h2>
+<ul style="list-style: none">
+<% if Planet.find_by(user_id: @user.id)%>
+  <%  planets = Planet.where(user_id: @user.id) %>
+  <% planets.each do |planet| %>
+  <li style="padding: 10px"><strong>Name:</strong> <%= planet.name %> <strong>Galaxy:</strong> <%= planet.location %></li>
+<% end %>
+<% end %>
+</ul>
 <%= link_to "back to home", root_path %>
 </center>
