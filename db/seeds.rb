@@ -13,6 +13,7 @@ require 'faker'
     location: Faker::Address.street_address,
     user_id: 1
   )
+  puts "planet"
 end
 
 10.times do
@@ -22,4 +23,5 @@ end
     user_id: 1,
     planet_id: rand(1..10)
   )
+  puts "booking"
 end
