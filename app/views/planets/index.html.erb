@@ -1,0 +1,7 @@
+<div class="container">
+  <% @planets.each do |planet|%>
+    <%= link_to planet.name, planet_path(planet)%> <br>
+    <p>Owned by <%= planet.user.first_name %> </p><br>
+    <br>
+  <% end %>
+</div>
