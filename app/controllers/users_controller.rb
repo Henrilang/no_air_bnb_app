@@ -4,4 +4,10 @@ class UsersController < ApplicationController
     @user_bookings = Booking.where(user_id: current_user)
     @user_planets = Planet.where(user_id: current_user)
   end
+  
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :photo)
+  end
 end
