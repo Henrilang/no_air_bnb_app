@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @bookings = Booking.where(user: current_user)
+    @user = current_user
+    @user_bookings = Booking.where(user_id: current_user)
+    @user_planets = Planet.where(user_id: current_user)
   end
 end
