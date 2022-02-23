@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-<div style="text-align:center">
-=======
+
 <div class="title" style="text-align:center">
->>>>>>> e483d2adc38fb0e986bca2577f4f8a17ec8f17fe
   <h1>Create a booking</h1><br>
 </div>
 <div>
   <% if @planet.user_id != current_user.id %>
-<<<<<<< HEAD
-    <div class="row card p-4">
-=======
     <div class="row card p-4 rounded">
->>>>>>> e483d2adc38fb0e986bca2577f4f8a17ec8f17fe
       <%= simple_form_for [@planet, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true  %>
@@ -19,8 +12,4 @@
       <% end %>
     </div>
   <% end %>
-<<<<<<< HEAD
-  </div>
-=======
 </div>
->>>>>>> e483d2adc38fb0e986bca2577f4f8a17ec8f17fe
