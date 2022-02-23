@@ -11,4 +11,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/footer"
+@import "components/footer";
+
+body {
+  background-image: url('space-background.jpeg');
+  background-size: cover;
+  // background-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: $e-orange;
+  &:hover {
+    color: $e-yellow;
+  }
+}
+
+p {
+  color: white;
+}
