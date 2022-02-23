@@ -1,6 +1,13 @@
-<%= simple_form_for @planet do |f| %>
-<%= f.input :name %>
-<%= f.input :location %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit %>
-<% end %>
+<div class="title" style="text-align:center">
+  <h1>Create a Planet</h1><br>
+</div>
+<div class="rounded">
+  <div class="row card p-4">
+    <%= simple_form_for @planet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.submit %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <% end %>
+  </div>
+</div>
