@@ -1,7 +1,20 @@
 <div class="container">
-  <% @planets.each do |planet|%>
-    <%= link_to planet.name, planet_path(planet)%> <br>
-    <p>Owned by <%= planet.user.first_name %> </p><br>
-    <br>
-  <% end %>
+  <div class="planet-header">
+    <h1>Planets</h1>
+  </div>
+  <div class="planets-container">
+    <% @planets.each do |planet|%>
+      <div class="card-planet">
+        <img src="https://t4.ftcdn.net/jpg/02/77/98/67/360_F_277986727_L2PWXsvn1LOyBYGYu2AJ0nABo5eQtFV4.jpg" />
+        <div class="card-planet-infos">
+          <div>
+            <h2><%= link_to planet.name, planet_path(planet)%></h2>
+            <p>~IO^%%VX per light-year</p>
+          </div>
+          <h2 class="card-planet-pricing">Owned by <%= planet.user.first_name %></h2>
+          <img src="https://st.focusedcollection.com/13422768/i/1800/focused_308618004-stock-photo-grey-alien-head-black-background.jpg" class="card-planet-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
