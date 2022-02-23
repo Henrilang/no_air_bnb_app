@@ -1,6 +1,9 @@
-.navbar {
-  background-color: white;
+.footer {
+  background-color: $e-blue;
   padding: 20px;
+  color: $e-yellow;
+  display: flex;
+  justify-content: space-between;
 }
 
 .socials-icons {
@@ -10,14 +13,16 @@
   display: flex;
   justify-content: space-between;
   width: 200px;
+  cursor: pointer;
 }
 
 .socials-icons li {
   font-size: 30px;
 }
+
 .socials-icons li i {
   &:hover {
-    color: rgb(75, 75, 75);
+    color: $e-orange;
   }
 }
 
@@ -29,7 +34,6 @@
 
 .info-text {
   font-family: $future-font;
-  color: black;
 }
 
 .info-links {
@@ -38,12 +42,12 @@
   padding-left: 15px;
   margin-bottom: 0px;
   margin-top: 10px;
+  list-style: none;
 }
 
 .info-links li a {
-  text-decoration: none;
   &:hover {
     text-decoration: underline;
-    color: rgb(75, 75, 75);
+    color: $e-yellow;
   }
 }

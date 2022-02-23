@@ -9,15 +9,13 @@ $future-font: 'Cairo', 'sans-serif';
 
 @import url('../chopsic-font/Chopsic-K6Dp.ttf');
 
-$logo-font: "Chopsic", "sans-serif";
-
-
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "Chopsic";
+  // src: font-url('Chopsic-K6Dp.eot');
+  src: /* font-url('Chopsic-K6Dp.eot?#iefix') format('embedded-opentype'),
+       font-url('Chopsic-K6Dp.woff') format('woff'), */
+       font-url('chopsic-font/Chopsic-K6Dp.ttf') format('truetype')
+}
+
+$logo-font: "Chopsic", "sans-serif";
