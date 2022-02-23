@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  #  method below hasn't been called!
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
