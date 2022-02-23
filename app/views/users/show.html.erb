@@ -1,49 +1,42 @@
-<center>
-<h1> </h1>
-<br>
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-<br>
+<div class="container">
+  <br>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <br>
 
-<h2>Your trips:</h2>
-<% if Booking.find_by(user_id: @user.id) %>
-  <ul style="list-style: none">
-  <% @bookings.each do |booking| %>
-    <% planet = booking.planet %>
-      <li style="padding: 10px"><strong>Planet:</strong> <%= planet.name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></li>
-  <% end %>
-  </ul>
+  <h2>Your trips:</h2>
+  <% if @user_bookings %>
+    <% @user_bookings.each do |booking| %>
+      <% planet = booking.planet %>
+        <ul style="list-style: none">
+          <li><strong>Planet:</strong> <%= planet.name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></li>
+        </ul>
+    <% end %>
   <% else %>
     <h4>You have no trips planned</h4>
-<% end %>
-<br>
-
-<% if Planet.where(user_id: @user.id) %>
-  <% planets = Planet.where(user_id: @user.id) %>
-  <ul style="list-style: none">
-  <% planets.each do |planet| %>
-    <li style="padding: 10px"><h2>Bookings for <%= planet.name %>:</h2>
-      <ul style="list-style: none">
-      <% Booking.where(planet_id: planet.id).each do |booking| %>
-        <li style="padding: 10px"><strong>Booker:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></li>
-      <% end %>
-      </ul>
-    <% end %>
-    </li>
-  </ul>
-<% end %>
-<br>
-
-
-<% if Planet.find_by(user_id: @user.id)%>
-  <h2>My planets:</h2>
-  <% planets = Planet.where(user_id: @user.id) %>
-  <% planets.each do |planet| %>
-    <ul style="list-style: none">
-      <li style="padding: 10px"><strong>Name:</strong> <%= planet.name %> <strong>Galaxy:</strong> <%= planet.location %></li>
   <% end %>
-<% end %>
-</ul>
+  <br>
 
-<%= link_to "back to home", root_path %>
-<%= link_to "Create new Planet", new_planet_path %>
-</center>
+
+  <h2>My planets:</h2>
+  <% if @user_planets %>
+    <% @user_planets.each do |planet| %>
+      <p><strong>Name:</strong> <%= planet.name %> <strong>Galaxy:</strong> <%= planet.location %></p>
+      <h6>Bookings:</h6>
+      <% if planet.bookings %>
+        <% planet.bookings.each do |booking| %>
+          <p><strong>Booked by:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
+        <% end %>
+      <% else%>
+        <h4>None</h4>
+      <% end %>
+    <% end %>
+  <% else %>
+    <h4>You have no planets</h4>
+  <% end %>
+  <br>
+
+
+
+  <%= link_to "back to home", root_path %>
+  <%= link_to "Create new Planet", new_planet_path %>
+</div>
