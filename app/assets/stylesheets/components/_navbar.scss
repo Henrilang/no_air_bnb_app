@@ -15,10 +15,12 @@
 }
 
 .nav-link {
+  font-family: $future-font;
   color: $e-yellow !important;
   &:hover {
     color: $e-orange !important;
   }
+  margin-right: 20px !important;
 }
 
 #brand-image {
