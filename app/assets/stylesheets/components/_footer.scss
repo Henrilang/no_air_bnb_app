@@ -1,7 +1,9 @@
 .footer {
   background-color: $e-blue;
   padding: 20px;
-  color: white;
+  color: $e-yellow;
+  display: flex;
+  justify-content: space-between;
 }
 
 .socials-icons {
@@ -20,7 +22,7 @@
 
 .socials-icons li i {
   &:hover {
-    color: rgb(75, 75, 75);
+    color: $e-orange;
   }
 }
 
@@ -44,10 +46,8 @@
 }
 
 .info-links li a {
-  text-decoration: none;
-  // color: $e-yellow;
-  // &:hover {
-  //   text-decoration: underline;
-  //   color: rgb(75, 75, 75);
-  // }
+  &:hover {
+    text-decoration: underline;
+    color: $e-yellow;
+  }
 }
