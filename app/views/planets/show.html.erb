@@ -1,9 +1,9 @@
 
-<div class="container text-center">
- <%= @planet.name %> <br>
-  <%= @planet.location %> <br>
-  <%= @planet.user.first_name %> <br>
-
+  <div class = "info">
+    <h2>Planet: <span class="name"><%= @planet.name%></span></h2> <br>
+    <h2>Galaxy: <span class="name"><%= @planet.location%></span></h2> <br>
+  </div>
+  <h4 class="white">Owner: &nbsp;<span class="name"><%= @planet.user.first_name%> <%= @planet.user.last_name%></span></h4> <br>
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -27,6 +27,7 @@
     </button>
   </div>
 
-  <%= link_to "Edit", edit_planet_path(@planet) %>
-  <%= link_to "Booking", new_planet_booking_path(@planet) %>
+  <%# <h4 class="center"><%= link_to "Edit", edit_planet_path(@planet) %>
+<div class = "bottom">
+  <h4 class="white"><%= link_to "Make a Booking", new_planet_booking_path(@planet) %></h4>
 </div>
