@@ -6,11 +6,11 @@ class PlanetsController < ApplicationController
 
   def show
   end
-  
+
   def new
     @planet = Planet.new
   end
-  
+
   def create
     @planet = Planet.new(set_params)
     @planet.user = current_user
@@ -20,7 +20,7 @@ class PlanetsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @planet = Planet.find(params[:id])
   end
@@ -31,6 +31,8 @@ class PlanetsController < ApplicationController
       redirect_to planet_path(@planet)
     else
       render :edit
+    end
+  end
 
   private
 
