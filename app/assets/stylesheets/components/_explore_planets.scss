@@ -19,7 +19,7 @@
 
   position:relative;
   float:left;
-  margin:20px;
+  margin:10px;
 
   }
   .square-flip{
@@ -250,12 +250,12 @@ transform: translateY(-50%) translateX(0px)  scale(1);
   /*You can delete this style*/
   .centerflipcards{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     // width:1330px;
     height:440px;
     text-align:center;
     margin:0 auto;
-    margin-top:25px;
+    margin-top:15px;
   }
 .clearfix{clear:both;}
 .centerflipcards p{
@@ -303,4 +303,11 @@ transform: translateY(-50%) translateX(0px)  scale(1);
 
 button:focus {
 	outline: none;
+}
+
+.big-boy {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 60px;
 }
