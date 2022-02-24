@@ -1,9 +1,11 @@
 .footer {
   background-color: $e-blue;
-  padding: 20px;
+  padding: 0.5rem 40px;
   color: $e-yellow;
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  align-items: center;
 }
 
 .socials-icons {

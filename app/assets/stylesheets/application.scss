@@ -30,3 +30,16 @@ a {
 h1, h2, h3, h4 {
   color: white;
 }
+
+.home-container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.content {
+  width: 900px;
+  margin: 20px auto;
+  align-items: center;
+}
