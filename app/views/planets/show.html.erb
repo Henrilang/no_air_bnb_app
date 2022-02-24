@@ -1,7 +1,9 @@
 <div class="container big-box">
   <div class = "info">
     <span><h2 class = "title"><%= @planet.name.upcase%></h2></span>
-    <span class = "icon"><%= cl_image_tag @planet.photos.first.key, height: 100, width: 100 %></span>
+    <% if @planet.photos.present? %>
+      <span class = "icon"><%= cl_image_tag @planet.photos.first.key, height: 100, width: 100 %></span>
+    <% end %>
     <div class = "subinfo">
       <div class="combo"><p class = "tag">Cluster:</p><p class = "name"><%= @planet.location%></p></div>
       <div class="combo"><p class = "tag">Owner:</p><p class = "name"><%= @planet.user.first_name%>  <%= @planet.user.last_name%></p></div>
@@ -16,11 +18,13 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <% @planet.photos.each_with_index do |photo, index| %>
-        <% if index != 0 %>
-          <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
-            <div><%= cl_image_tag photo.key, height: 600, width: 400, class: "d-block w-100 caroimage" %></div>
-          </div>
+      <% if @planet.photos.present? %>
+        <% @planet.photos.each_with_index do |photo, index| %>
+          <% if index != 0 %>
+            <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
+              <div><%= cl_image_tag photo.key, height: 600, width: 400, class: "d-block w-100 caroimage" %></div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
@@ -44,13 +48,13 @@
     <div class= "booking-button"><span class = "new-btn"><%= link_to "", new_planet_booking_path(@planet) %></span>
     </div>
     <div>
-      <% if current_user == @planet.user %>
+      <%# <% if current_user == @planet.user %> %>
         <span class="d-inline-flex position-absolute bottom--10 start-50 translate-middle-x"><p class=""><%= link_to "activate deathstar",
                 planet_path(@planet),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %></p>
           <p class="mx-2"><%= link_to "edit planet", edit_planet_path(@planet) %></p></span>
-      <% end %>
+      <%# <% end %> %>
     </div>
   </div>
 </div>
