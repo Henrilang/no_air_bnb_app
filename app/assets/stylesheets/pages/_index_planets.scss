@@ -9,74 +9,45 @@
   color: $e-yellow;
 }
 
-.planets-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1.5em;
-}
-
-.card-planet-infos h2 {
-  font-family: $future-font;
-  font-size: 20px;
-  transition: 1s;
-  font-weight: bold;
-  margin: 0;
-  padding: 0px;
-  :hover {
-    text-decoration: overline;
-    text-decoration-color: $e-orange;
-  }
-}
-
-.card-planet-infos h2 a {
-  padding: 0;
-  margin: 0;
-}
-
-.card-planet-infos p {
-  color: $e-blue;
-  font-size: 15px;
-  opacity: .7;
-  margin: 0;
-  color: $e-blue;
-}
-
-.card-planet {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(184, 183, 183, 0.2);
-  border-radius: 5px;
-}
-
-.card-planet > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-
-
-.card-planet-infos .card-planet-pricing {
-  font-size: 13px;
-  color: $e-blue;
-  font-weight: lighter;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-planet .card-planet-infos {
-  padding: 16px;
+#rating-info-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: center;
 }
 
-.card-planet-infos .card-planet-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+
+#rating-info-container i {
+  color: white;
+  padding: 3px;
+}
+
+#planet-name {
+  font-family: $future-font;
+  color: $e-orange;
+  font-weight: 800;
+}
+
+#planet-price {
+  font-family: $future-font;
+  color: $e-yellow;
+}
+
+#planet-square {
+  background-image: url("https://t4.ftcdn.net/jpg/02/77/98/67/360_F_277986727_L2PWXsvn1LOyBYGYu2AJ0nABo5eQtFV4.jpg");
+}
+
+#description {
+  font-family: $future-font;
+  color: $e-yellow;
+}
+
+#book {
+  font-family: $future-font;
+}
+
+#planet-square2 {
+  background-image: url("https://cdn.pixabay.com/photo/2020/02/15/03/25/alien-4849877_960_720.jpg");
+}
+
+#planet-square-container2 {
+  top:80%;
 }
