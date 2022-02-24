@@ -26,6 +26,7 @@
     width:400px;
     height:400px;
   }
+
   .square,.square2{
     width:100%;
     height:100%;
@@ -35,7 +36,6 @@
     background-size: cover;
     background-position:center center;
     border-radius: 10px;
-    background-image: url("https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
@@ -68,12 +68,10 @@
     transform-style: preserve-3d;
   }
 
-
   .square2{
 
     background-size: cover;
     background-position:center center;
-    background-image: url("https://wallpapercave.com/wp/yPzwg3S.jpg");
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
@@ -124,6 +122,15 @@ transform: translateY(-50%) translateX(0px)  scale(1);
     transform-style: preserve-3d;
     z-index:2;
   }
+
+  .square-container-planet {
+    display: flex;
+    justify-content: space-between;
+    top:90%;
+    padding: 0px 10px;
+  }
+
+
   .square-flip:hover .square-container{
 
     -webkit-transform: translateY(-50%) translateX(-650px)  scale(.88);
@@ -311,3 +318,4 @@ button:focus {
   position: relative;
   top: 60px;
 }
+

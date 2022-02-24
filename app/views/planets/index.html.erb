@@ -1,20 +1,37 @@
-<div class="container">
+<div class="index-container">
   <div class="planet-header">
     <h1>Planets</h1>
   </div>
   <div class="planets-container">
     <% @planets.each do |planet|%>
-      <div class="card-planet">
-        <img src="https://t4.ftcdn.net/jpg/02/77/98/67/360_F_277986727_L2PWXsvn1LOyBYGYu2AJ0nABo5eQtFV4.jpg" />
-        <div class="card-planet-infos">
-          <div>
-            <h2><%= link_to planet.name, planet_path(planet)%></h2>
-            <p>~IO^%%VX per light-year</p>
+      <div id="planets-centerflipcards" class="centerflipcards">
+        <div class="square-flip square-flip-card">
+          <div id = "planet-square" class='square' style="background-image: url('https://t4.ftcdn.net/jpg/02/77/98/67/360_F_277986727_L2PWXsvn1LOyBYGYu2AJ0nABo5eQtFV4.jpg')">
+            <div class="square-container square-container-planet">
+              <div class="name-price">
+                <h2 id="planet-name"><%= planet.name%></h2>
+                <p id="planet-price">~IO^%%VX per light-year</p>
+              </div>
+              <div id="rating-info-container">
+                <% rand(1..5).times do %>
+                  <i class="fas fa-atom"></i>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="flip-overlay">
+            </div>
           </div>
-          <h2 class="card-planet-pricing">Owned by <%= planet.user.first_name %></h2>
-          <img src="https://st.focusedcollection.com/13422768/i/1800/focused_308618004-stock-photo-grey-alien-head-black-background.jpg" class="card-planet-user avatar-bordered" />
+          <div id="planet-square2" class='square2' style="background-image: url('https://cdn.pixabay.com/photo/2020/02/15/03/25/alien-4849877_960_720.jpg')">
+            <div id="planet-square-container2" class="square-container2">
+              <a href="/planets/<%=planet.id%>"><button id="book" class="name noselect btn">More Info</button></a>
+            </div>
+            <div class="flip-overlay">
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<%# hi %>

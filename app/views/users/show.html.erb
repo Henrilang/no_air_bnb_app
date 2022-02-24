@@ -1,47 +1,44 @@
-<div class="container">
+<body>
   <div class = "text-color">
-    <br>
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-    <br>
-
-    <h2>Your trips:</h2>
-    <% if @user_bookings %>
-      <% @user_bookings.each do |booking| %>
-        <% planet = booking.planet %>
-          <ul style="list-style: none">
-            <li><strong>Planet:</strong> <%= planet.name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></li>
-          </ul>
-      <% end %>
-    <% else %>
-      <h4>You have no trips planned</h4>
-    <% end %>
-    <br>
-
-
-    <h2>My planets:</h2>
-    <% if @user_planets %>
-      <% @user_planets.each do |planet| %>
-        <p><strong>Name:</strong> <%= planet.name %> <strong>Galaxy:</strong> <%= planet.location %></p>
-        <h6>Bookings:</h6>
-        <% if planet.bookings %>
-          <% planet.bookings.each do |booking| %>
-            <p><strong>Booked by:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
+    <div class="user_page">
+      <br>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <br>
+      <h2>Your trips</h2>
+        <% unless @user_bookings.empty? %>
+          <% @user_bookings.each do |booking| %>
+            <% planet = booking.planet %>
+              <ul style="list-style: none">
+                <li><strong>Planet:</strong> <%= planet.name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></li>
+              </ul>
           <% end %>
-        <% else%>
-          <h4>None</h4>
+        <% else %>
+          <h4>You have no trips planned</h4>
         <% end %>
+      <br>
+
+      <h2>My planets</h2>
+      <% unless @user_planets.empty? %>
+        <% @user_planets.each do |planet| %>
+          <p><strong>Name:</strong> <%= planet.name %> <strong>Galaxy:</strong> <%= planet.location %></p>
+          <h6>Bookings:</h6>
+          <% unless planet.bookings.empty? %>
+            <% planet.bookings.each do |booking| %>
+              <p><strong>Booked by:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
+            <% end %>
+          <% else%>
+            <h4>None</h4>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h4>You have no planets</h4>
       <% end %>
-    <% else %>
-      <h4>You have no planets</h4>
-    <% end %>
-    <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <%= link_to "back to home", root_path %>
+      <%= link_to "Create new Planet", new_planet_path %>
+    </div>
   </div>
-  <br>
-  <br>
-<br>
-
-
-
-  <%= link_to "back to home", root_path %>
-  <%= link_to "Create new Planet", new_planet_path %>
-</div>
+</body>

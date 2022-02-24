@@ -1,0 +1,54 @@
+
+.planet-header {
+  padding: 30px;
+  text-align: center;
+}
+.planet-header h1 {
+  text-decoration: overline;
+  text-decoration-color:  $e-orange;
+  font-family: $logo-font;
+  color: $e-yellow;
+}
+
+#rating-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.planets-container {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#rating-info-container i {
+  color: white;
+  padding: 3px;
+}
+
+
+#planet-name {
+  font-family: $future-font;
+  color: $e-orange;
+  font-weight: 800;
+}
+
+#planet-price {
+  font-family: $future-font;
+  color: $e-yellow;
+}
+
+
+#book {
+  font-family: $future-font;
+  &:hover {
+    color: white;
+  }
+}
+
+
+#planet-square-container2 {
+  top:80%;
+}
+// hi
