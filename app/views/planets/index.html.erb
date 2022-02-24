@@ -6,7 +6,7 @@
     <% @planets.each do |planet|%>
       <div id="planets-centerflipcards" class="centerflipcards">
         <div class="square-flip square-flip-card">
-          <div id = "planet-square" class='square' style="background-image: url(<%= cl_image_tag planet.photos.last.key, height: 100, width: 100 %>)">
+          <div id="planet-square" class='square' style="background-image: url('https://t4.ftcdn.net/jpg/02/77/98/67/360_F_277986727_L2PWXsvn1LOyBYGYu2AJ0nABo5eQtFV4.jpg')">
             <div class="square-container square-container-planet">
               <div class="name-price">
                 <h2 id="planet-name"><%= planet.name%></h2>
