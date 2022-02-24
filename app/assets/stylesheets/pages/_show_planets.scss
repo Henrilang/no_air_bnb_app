@@ -1,12 +1,12 @@
-.name {
-  color: #f8bc05;
-  font-family: Verdana, sans-serif;
-}
+
 
 .info {
-  margin: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .white {
@@ -29,8 +29,126 @@
   object-fit: cover;
 }
 
+.container {
+  padding: 0px;
+}
 
-
-.carousel-inner > div > div img {
+.carousel-inner {
   border-radius: 8px;
+  border: 5px solid black;
+  height: 400px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: 800;
+  position: relative;
+  bottom: 0px;
+  font-family: $logo-font;
+  text-decoration: overline;
+  color: #f8bc05;
+  text-decoration-color: #a44322;
+}
+
+.icon {
+  position: relative;
+  bottom: 10px;
+  right: 70px;
+}
+
+.subinfo {
+  position: relative;
+  top: 10px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+.new-btn {
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+.new-btn a{
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.new-btn a:before,
+.new-btn a:after{
+  position: absolute;
+  content: "Interested?";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid white;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.new-btn a:before{
+  color: white;
+  background: transparent;
+  transform: rotateY(0deg) translateZ(25px);
+}
+.new-btn a:after{
+  color: #f8bc05;
+  border: 5px solid #f8bc05;
+  content: "Book Now";
+  transform: rotateX(90deg) translateZ(25px);
+}
+.new-btn a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.big-box {
+  background-color: rgba(0,0,0, .3);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.description {
+  padding: 10px;
+  background-color: rgba(0,0,0, .3);
+  border-radius: 8px;
+}
+
+.booking-button {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.combo {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 40px;
+  padding: 0;
+  line-height: 4px;
+}
+
+.tag {
+  color: #f8bc05;
+}
+
+.name {
+  font-size: 20px;
+  padding-left: 5px;
+  align-self: right;
 }

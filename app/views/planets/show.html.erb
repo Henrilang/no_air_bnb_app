@@ -1,45 +1,56 @@
-
-  <div class="container">
-    <div class = "info d-flex justify-content-between">
-      <span class = "title"><h2><%= @planet.name%></h2></span>
-      <span class = "icon"><%= cl_image_tag @planet.photos.first.key, height: 70, width: 70 %></span>
-      <h2><span><%= @planet.location%></span></h2>
+<div class="container big-box">
+  <div class = "info">
+    <span><h2 class = "title"><%= @planet.name.upcase%></h2></span>
+    <span class = "icon"><%= cl_image_tag @planet.photos.first.key, height: 100, width: 100 %></span>
+    <div class = "subinfo">
+      <div class="combo"><p class = "tag">Cluster:</p><p class = "name"><%= @planet.location%></p></div>
+      <div class="combo"><p class = "tag">Owner:</p><p class = "name"><%= @planet.user.first_name%>  <%= @planet.user.last_name%></p></div>
     </div>
-    <h4 class="white">Owner: &nbsp;<span class="name"><%= @planet.user.first_name%> <%= @planet.user.last_name%></span></h4> <br>
-    <div id="carouselExampleIndicators" class="carousel slide carousel-container" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <% @planet.photos.each_with_index do |photo, index| %>
-          <% if index != 0 %>
-            <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
-              <div><%= cl_image_tag photo.key, height: 600, width: 400, class: "d-block w-100 caroimage" %></div>
-            </div>
-          <% end %>
+  </div>
+
+
+  <div id="carouselExampleIndicators" class="carousel slide carousel-container" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <% @planet.photos.each_with_index do |photo, index| %>
+        <% if index != 0 %>
+          <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
+            <div><%= cl_image_tag photo.key, height: 600, width: 400, class: "d-block w-100 caroimage" %></div>
+          </div>
         <% end %>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <% end %>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-    <%# <h4 class="center"><%= link_to "Edit", edit_planet_path(@planet) %>
-  <div class = "position-relative">
-    <h4 class="white"><%= link_to "Make a Booking", new_planet_booking_path(@planet) %></h4>
-    <%# <% if current_user == @planet.user %> %>
-      <span class="d-inline-flex position-absolute bottom--10 start-50 translate-middle-x"><p class=""><%= link_to "activate deathstar",
-              planet_path(@planet),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %></p>
-        <p class="mx-2"><%= link_to "edit planet", edit_planet_path(@planet) %></p></span>
-    <%# <% end %> %>
+  <div class = "bottom-info">
+    <div class="description">
+      <h4>Description</h4>
+      <p>Jupiter is a stunning gas giant located just a Quasar's throw away from the dreamy Andromeda
+      galaxy, once thought to play host to the mythical Galaxy Games. Some say Jupiters red spot is the most beautiful sight
+      in the solar system, others say it's a gateway to hell. We'll let you decide...</p>
+    </div>
+    <div class= "booking-button"><span class = "new-btn"><%= link_to "", new_planet_booking_path(@planet) %></span>
+    </div>
+    <div>
+      <% if current_user == @planet.user %>
+        <span class="d-inline-flex position-absolute bottom--10 start-50 translate-middle-x"><p class=""><%= link_to "activate deathstar",
+                planet_path(@planet),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></p>
+          <p class="mx-2"><%= link_to "edit planet", edit_planet_path(@planet) %></p></span>
+      <% end %>
+    </div>
   </div>
 </div>
