@@ -30,7 +30,14 @@ a {
 }
 
 h1, h2, h3, h4 {
-  color: white;
+  font-family: $future-font;
+}
+
+h1 {
+  font-family: $logo-font;
+  color: $e-yellow;
+  text-decoration: overline;
+  text-decoration-color: $e-orange;
 }
 
 .home-container {
