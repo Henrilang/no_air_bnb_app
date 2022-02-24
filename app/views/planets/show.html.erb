@@ -1,33 +1,45 @@
 
-  <div class = "info">
-    <h2>Planet: <span class="name"><%= @planet.name%></span></h2> <br>
-    <h2>Galaxy: <span class="name"><%= @planet.location%></span></h2> <br>
-  </div>
-  <h4 class="white">Owner: &nbsp;<span class="name"><%= @planet.user.first_name%> <%= @planet.user.last_name%></span></h4> <br>
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <div class="container">
+    <div class = "info d-flex justify-content-between">
+      <span class = "title"><h2><%= @planet.name%></h2></span>
+      <span class = "icon"><%= cl_image_tag @planet.photos.first.key, height: 70, width: 70 %></span>
+      <h2><span><%= @planet.location%></span></h2>
     </div>
-    <div class="carousel-inner">
-      <% @planet.photos.each_with_index do |photo, index| %>
-      <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
-        <%= cl_image_tag photo.key, height: 600, width: 400, class: "d-block w-100" %>
+    <h4 class="white">Owner: &nbsp;<span class="name"><%= @planet.user.first_name%> <%= @planet.user.last_name%></span></h4> <br>
+    <div id="carouselExampleIndicators" class="carousel slide carousel-container" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <% end %>
+      <div class="carousel-inner">
+        <% @planet.photos.each_with_index do |photo, index| %>
+          <% if index != 0 %>
+            <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
+              <div><%= cl_image_tag photo.key, height: 600, width: 400, class: "d-block w-100 caroimage" %></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-  <%# <h4 class="center"><%= link_to "Edit", edit_planet_path(@planet) %>
-<div class = "bottom">
-  <h4 class="white"><%= link_to "Make a Booking", new_planet_booking_path(@planet) %></h4>
+    <%# <h4 class="center"><%= link_to "Edit", edit_planet_path(@planet) %>
+  <div class = "position-relative">
+    <h4 class="white"><%= link_to "Make a Booking", new_planet_booking_path(@planet) %></h4>
+    <%# <% if current_user == @planet.user %> %>
+      <span class="d-inline-flex position-absolute bottom--10 start-50 translate-middle-x"><p class=""><%= link_to "activate deathstar",
+              planet_path(@planet),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></p>
+        <p class="mx-2"><%= link_to "edit planet", edit_planet_path(@planet) %></p></span>
+    <%# <% end %> %>
+  </div>
 </div>
