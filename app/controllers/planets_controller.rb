@@ -1,5 +1,5 @@
 class PlanetsController < ApplicationController
-  before_action :set_planet, only: [:show, :edit, :update]
+  before_action :set_planet, only: [:show, :edit, :update, :destroy]
   def index
     @planets = Planet.all
   end
@@ -32,6 +32,12 @@ class PlanetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @planet.destroy
+    redirect_to planets_path
+    # no need for app/views/restaurants/destroy.html.erb
   end
 
   private

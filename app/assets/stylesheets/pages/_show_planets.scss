@@ -22,3 +22,15 @@
 .bottom {
   margin: 50px;
 }
+
+.caroimage {
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+}
+
+
+
+.carousel-inner > div > div img {
+  border-radius: 8px;
+}
