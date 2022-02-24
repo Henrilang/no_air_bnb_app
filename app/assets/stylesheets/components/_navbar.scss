@@ -8,10 +8,17 @@
   flex-grow: 0;
 }
 
+.navbar-space .navbar-brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .navbar-space .navbar-brand h1 {
   font-family: $logo-font;
   font-size: 32px;
   color: $e-yellow;
+  margin-bottom: 0;
 }
 
 .nav-link {
@@ -28,5 +35,6 @@
 
 #brand-image {
   height: auto;
-  width: 30px;
+  width: 100px;
+  padding: 0 15px;
 }

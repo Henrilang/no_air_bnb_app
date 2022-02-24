@@ -1,5 +1,6 @@
-<%= simple_form_for(@planet) do |f|%>
+<h3><%= simple_form_for(@planet) do |f|%>
 <%= f.input :name %>
 <%= f.input :location %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.submit %>
-<% end %>
+<% end %></h3>
