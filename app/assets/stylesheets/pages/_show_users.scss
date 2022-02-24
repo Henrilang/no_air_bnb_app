@@ -1,3 +1,22 @@
 .text-color {
-  color: white;
+  color: #f8bc05;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+}
+
+div.user_page {
+  background-color: rgba(8, 63, 100, 0.5);
+  justify-content: center;
+  border-radius: 8px;
+  padding: auto;
+}
+
+div.h2 {
+  display: flex;
+  align-items: center;
+}
+
+div.backAndCreatebtn {
+  justify-content: center;
 }
