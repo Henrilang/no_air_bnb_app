@@ -1,15 +1,12 @@
-
-<div class="title" style="text-align:center">
+<div class="titlebooking">
   <h1>Create a booking</h1><br>
-</div>
-<div>
-  <% if @planet.user_id != current_user.id %>
-    <div class="row card p-4 rounded">
-      <%= simple_form_for [@planet, @booking] do |f| %>
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true  %>
-        <%= f.submit class: 'btn btn-primary btn-block' %>
-      <% end %>
-    </div>
-  <% end %>
+    <% if @planet.user_id != current_user.id %>
+      <div>
+        <%= simple_form_for [@planet, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true  %>
+          <%= f.submit class: 'btn btn-block', value: 'Create' %>
+        <% end %>
+      </div>
+    <% end %>
 </div>
