@@ -166,7 +166,14 @@ transform: translateY(-50%) translateX(0px)  scale(1);
     transform-style: preserve-3d;
   }
 
+  .square-container h2, h3 {
+    text-shadow: 1px 1px 1px black;
+  }
 
+  .square-container2 h2 {
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px black;
+  }
 
   /*Style text*/
   .square-flip h2{
@@ -318,4 +325,3 @@ button:focus {
   position: relative;
   top: 60px;
 }
-
