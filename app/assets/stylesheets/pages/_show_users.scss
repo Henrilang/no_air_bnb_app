@@ -5,11 +5,15 @@
   justify-content: center;
 }
 
+.div.user_name {
+  display: inline-block;
+}
+
 div.user_page {
-  background-color: rgba(8, 63, 100, 0.5);
+  background-color: rgba(0, 0, 0, .3);
   justify-content: center;
   border-radius: 8px;
-  padding: auto;
+  padding: 16px;
 }
 
 div.h2 {
