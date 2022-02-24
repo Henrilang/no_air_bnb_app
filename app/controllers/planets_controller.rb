@@ -1,7 +1,15 @@
 class PlanetsController < ApplicationController
   before_action :set_planet, only: [:show, :edit, :update, :destroy]
   def index
-    @planets = Planet.all
+    if params[:query].present?
+      sql_query = " \
+        planets.name @@ :query \
+        OR planets.location @@ :query \
+      "
+      @planets = Planet.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @planets = Planet.all
+    end
   end
 
   def show
