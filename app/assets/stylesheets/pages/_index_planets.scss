@@ -1,3 +1,4 @@
+
 .planet-header {
   padding: 30px;
   text-align: center;
@@ -14,11 +15,18 @@
   align-items: center;
 }
 
+.planets-container {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 #rating-info-container i {
   color: white;
   padding: 3px;
 }
+
 
 #planet-name {
   font-family: $future-font;
@@ -32,14 +40,11 @@
 }
 
 
-
-#description {
-  font-family: $future-font;
-  color: $e-yellow;
-}
-
 #book {
   font-family: $future-font;
+  &:hover {
+    color: white;
+  }
 }
 
 
