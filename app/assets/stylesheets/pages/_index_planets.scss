@@ -31,7 +31,7 @@
 
 #planet-name {
   font-family: $future-font;
-  color: $e-orange;
+  color: white;
   font-weight: 800;
 }
 
@@ -53,3 +53,15 @@
   top:80%;
 }
 // hi
+.backpic {
+  object-fit: cover;
+  height: 400px;
+  width: 400px;
+  position: relative;
+  bottom: 95px;
+}
+
+.square-container {
+  padding: 10px;
+  background-color: rgba(0,0,0, .3);
+}
