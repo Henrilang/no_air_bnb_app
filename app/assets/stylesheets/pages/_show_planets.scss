@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   text-align: right;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: $future-font
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
@@ -83,7 +83,7 @@
   transform-style: preserve-3d;
   transform: translateZ(-25px);
   transition: transform .25s;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $future-font
 
 }
 .new-btn a:before,
@@ -123,7 +123,7 @@
 }
 
 .description {
-  padding: 10px;
+  padding: 40px 20px;
   background-color: rgba(0,0,0, .3);
   border-radius: 8px;
 }
@@ -152,4 +152,27 @@
   font-size: 20px;
   padding-left: 5px;
   align-self: right;
+}
+
+.description h4 {
+  color: $e-yellow;
+}
+
+.address {
+  padding: 20px 20px;
+}
+
+.address h4 {
+  color: $e-yellow;
+  font-family: $future-font;
+}
+
+.main-rating {
+  width: 150px;
+}
+
+.main-rating h5 {
+  font-weight: 700;
+  font-family: $future-font;
+  color: $e-yellow;
 }
