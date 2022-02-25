@@ -1,5 +1,4 @@
 
-
 .info {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -30,7 +29,8 @@
 }
 
 .container {
-  padding: 0px;
+  width: 1100px;
+  margin: 70px 0px;
 }
 
 .carousel-inner {
@@ -59,13 +59,7 @@
 }
 
 .subinfo {
-  position: relative;
-  top: 10px;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  font-family: $future-font
+  font-family: $future-font;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
@@ -116,9 +110,10 @@
 
 .big-box {
   background-color: rgba(0,0,0, .3);
-  color: white;
+  // color: white;
   padding: 10px;
-  margin: 20px;
+  margin-top: 40px;
+  margin-bottom: 90px;
   border-radius: 8px;
 }
 
@@ -137,25 +132,31 @@
 
 .combo {
   display: flex;
-  justify-content: space-evenly;
-  position: relative;
-  top: 40px;
-  padding: 0;
-  line-height: 4px;
+  justify-content: space-between;
+  padding-right: 10px;
+
 }
 
+
 .tag {
-  color: #f8bc05;
+  text-align: center;
+  color: $e-yellow;
+  margin-right: 20px;
 }
 
 .name {
+  color: white;
   font-size: 20px;
   padding-left: 5px;
-  align-self: right;
+  font-family: $future-font;
 }
 
 .description h4 {
   color: $e-yellow;
+}
+
+.description p {
+  color: white;
 }
 
 .address {
@@ -175,4 +176,8 @@
   font-weight: 700;
   font-family: $future-font;
   color: $e-yellow;
+}
+
+.main-rating i {
+  color: white;
 }

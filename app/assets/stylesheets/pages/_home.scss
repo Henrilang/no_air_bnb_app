@@ -42,7 +42,12 @@ body {
   text-decoration: overline;
 }
 
+.btn {
+  font-family: $future-font;
+}
+
 .btn:hover {
   color: #f8bc05;
   border: 5px solid #f8bc05;
+
 }
