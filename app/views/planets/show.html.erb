@@ -59,13 +59,13 @@
       </div>
     <% end %>
     <div>
-      <%# <% if current_user == @planet.user %>
+      <% if current_user == @planet.user %>
         <span class="d-inline-flex position-absolute bottom--10 start-50 translate-middle-x"><p class=""><%= link_to "activate deathstar",
                 planet_path(@planet),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %></p>
           <p class="mx-2"><%= link_to "edit planet", edit_planet_path(@planet) %></p></span>
-      <%# <% end %>
+      <% end %>
     </div>
   </div>
 </div>
