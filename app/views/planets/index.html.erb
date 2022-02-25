@@ -17,7 +17,7 @@
             <div class="square-container square-container-planet">
               <div class="name-price">
                 <h2 id="planet-name"><%= planet.name%></h2>
-                <p id="planet-price">~IO^%%VX per light-year</p>
+                <p id="planet-price">$<%=rand(1000000..1000000000000)%> per light-year</p>
               </div>
               <div id="rating-info-container">
                 <% rand(1..5).times do %>
