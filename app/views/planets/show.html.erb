@@ -49,9 +49,9 @@
       <h4>Description</h4>
       <p><%=@planet.description%></p>
     </div>
-    <div class="address">
-      <h4>Address</h4>
-      <p><%= @planet.address %></p>
+    <div class="price">
+      <h4>Price</h4>
+      <p>$<%=rand(1000000..1000000000000)%> per light-year</p>
     </div>
 
     <div class= "booking-button"><span class = "new-btn"><%= link_to "", new_planet_booking_path(@planet) %></span>
