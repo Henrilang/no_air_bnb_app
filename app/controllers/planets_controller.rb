@@ -13,11 +13,7 @@ class PlanetsController < ApplicationController
     @planets = Planet.geocoded
 
     @markers = @planets.map do |planet|
-      if planet.photos.present?
-        image = planet.photos.first.key
-      else
-        image_array = ["c5nxy7nf6p933veyi1os0xo47arw.png", "awqu0ztuvjhzdtzwkholja9r06so.png", "mlltt11ev1nf7dx7fljq4gek3kz8.png", "33dhrsb4nzx478hrb04a60y12gcn.png"]
-      end
+      image_array = ["c5nxy7nf6p933veyi1os0xo47arw.png", "awqu0ztuvjhzdtzwkholja9r06so.png", "mlltt11ev1nf7dx7fljq4gek3kz8.png", "33dhrsb4nzx478hrb04a60y12gcn.png"]
       {
         lat: rand(-60..60).to_f,
         lng: rand(-150..150).to_f,
