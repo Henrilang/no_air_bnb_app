@@ -23,7 +23,8 @@ end
   Planet.create!(
     name: Faker::Space.unique.planet,
     location: Faker::Space.unique.galaxy,
-    user_id: rand(1..50)
+    user_id: rand(1..50),
+    description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
   )
   puts "planet created"
 end
@@ -37,11 +38,3 @@ end
   )
   puts "booking created"
 end
-
-Planet.create!(
-  name: "Tittus",
-  location: "Big Dipper",
-  address: "New York City",
-  user_id: rand(1..50)
-)
-puts "planet created"
