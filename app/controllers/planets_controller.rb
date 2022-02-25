@@ -11,12 +11,18 @@ class PlanetsController < ApplicationController
       @planets = Planet.all
     end
     @planets = Planet.geocoded
+
     @markers = @planets.map do |planet|
+      if planet.photos.present?
+        image = planet.photos.first.key
+      else
+        image = "c5nxy7nf6p933veyi1os0xo47arw"
+      end
       {
         lat: rand(-60..60).to_f,
         lng: rand(-150..150).to_f,
         info_window: render_to_string(partial: "info_window", locals: { planet: planet }),
-        image_url: "http://res.cloudinary.com/dnkevcp8q/image/upload/v1/development/#{planet.photos.first.key}"
+        image_url: "http://res.cloudinary.com/dnkevcp8q/image/upload/v1/development/#{image}.png"
       }
     end
   end
@@ -50,6 +56,8 @@ class PlanetsController < ApplicationController
   def create
     @planet = Planet.new(set_params)
     @planet.user = current_user
+    @planet.latitude = rand(-60..60)
+    @planet.longitude = rand(-150..150)
     if @planet.save
       redirect_to planet_path(@planet)
     else
