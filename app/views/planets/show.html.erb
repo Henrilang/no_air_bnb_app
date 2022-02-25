@@ -53,9 +53,11 @@
       <h4>Price</h4>
       <p>$<%=rand(1000000..1000000000000)%> per light-year</p>
     </div>
-
-    <div class= "booking-button"><span class = "new-btn"><%= link_to "", new_planet_booking_path(@planet) %></span>
-    </div>
+    <% if @planet.user != current_user%>
+      <div class= "booking-button">
+        <span class = "new-btn"><%= link_to "", new_planet_booking_path(@planet) %></span>
+      </div>
+    <% end %>
     <div>
       <%# <% if current_user == @planet.user %>
         <span class="d-inline-flex position-absolute bottom--10 start-50 translate-middle-x"><p class=""><%= link_to "activate deathstar",
