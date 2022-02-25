@@ -7,8 +7,8 @@ body {
   width: 900px;
   display: flex;
   justify-content: center;
-  margin-top: 200px;
-  margin-bottom: 300px;
+  margin-top: 100px;
+  margin-bottom: 150px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 8px;
@@ -19,10 +19,12 @@ body {
   width: 300px;
   margin: 20px;
   color: black;
+  margin-top: 50px;
 }
 
 .search-button {
   margin: 20px;
+  margin-top: 45px;
 }
 
 .form-control {
@@ -31,12 +33,13 @@ body {
 }
 
 .slogan {
+  margin-top: 50px;
   font-size: 40px;
   font-weight: 100;
   position: absolute;
   top: -50px;
   color: white;
-  text-decoration: none;
+  text-decoration: overline;
 }
 
 .btn:hover {

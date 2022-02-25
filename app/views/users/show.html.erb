@@ -1,12 +1,13 @@
 <body>
-  <div class = "text-color">
+  <div class="user-container text-color">
     <div class="namebtn">
       <br>
       <div class="user_name">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-        <b style="font-size: 15px margin-right:16px"><%= link_to "Create new Planet", new_planet_path %></b>
+        <!--b class="btn btn-block"><%= link_to "Create Planet", new_planet_path %></b-->
+        <a href="/planets/new"><button class="name noselect btn-create">Create Planet</button></a>
       </div>
-      <br>
+
       <div class="info-wrapper">
         <div class="user_page">
           <h2>Your trips:</h2>
@@ -21,18 +22,24 @@
             <h4>You have no trips planned</h4>
           <% end %>
         </div>
-        <br>
+
         <div class="user_page">
           <h2>My planets:</h2>
         <% unless @user_planets.empty? %>
           <% @user_planets.each do |planet| %>
-            <h4><%= planet.name %> </p>
-            <h6>You have <%=planet.bookings.count%> bookings for <%=planet.name%></h6>
-            <% unless planet.bookings.empty? %>
-              <% planet.bookings.each do |booking| %>
-                <p><strong>Booked by:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
+            <div class="my-planet">
+              <div class="my-planet-info">
+                <h4><%= planet.name %> </h4>
+                <p><%= link_to "Edit", edit_planet_path(planet)%></p>
+              </div>
+
+              <h6>You have <%=planet.bookings.count%> bookings for <%=planet.name%></h6>
+              <% unless planet.bookings.empty? %>
+                <% planet.bookings.each do |booking| %>
+                  <p><strong>Booked by:</strong> <%= booking.user.first_name %> <strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           <% end %>
         <% else %>
           <h4>You have no planets</h4>
