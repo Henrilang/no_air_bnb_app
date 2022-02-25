@@ -159,13 +159,18 @@
   color: white;
 }
 
-.address {
+.price {
   padding: 20px 20px;
 }
 
-.address h4 {
+.price h4 {
   color: $e-yellow;
   font-family: $future-font;
+}
+
+.price p {
+  font-family: $future-font;
+  color: white;
 }
 
 .main-rating {
