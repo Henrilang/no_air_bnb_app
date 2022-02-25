@@ -56,6 +56,8 @@ class PlanetsController < ApplicationController
   def create
     @planet = Planet.new(set_params)
     @planet.user = current_user
+    @planet.latitude = rand(-60..60)
+    @planet.longitude = rand(-150..150)
     if @planet.save
       redirect_to planet_path(@planet)
     else
