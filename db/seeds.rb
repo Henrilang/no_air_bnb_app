@@ -23,6 +23,8 @@ end
   Planet.create!(
     name: Faker::Space.unique.planet,
     location: Faker::Space.unique.galaxy,
+    latitude: rand(-60..60).to_f,
+    longitude: rand(-150..150).to_f,
     user_id: rand(1..50),
     description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
   )
