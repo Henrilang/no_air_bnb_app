@@ -16,13 +16,13 @@ class PlanetsController < ApplicationController
       if planet.photos.present?
         image = planet.photos.first.key
       else
-        image = "c5nxy7nf6p933veyi1os0xo47arw.png"
+        image = "c5nxy7nf6p933veyi1os0xo47arw"
       end
       {
         lat: rand(-60..60).to_f,
         lng: rand(-150..150).to_f,
         info_window: render_to_string(partial: "info_window", locals: { planet: planet }),
-        image_url: "http://res.cloudinary.com/dnkevcp8q/image/upload/v1/development/#{image}"
+        image_url: "http://res.cloudinary.com/dnkevcp8q/image/upload/v1/development/#{image}.png"
       }
     end
   end
