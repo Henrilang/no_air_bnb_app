@@ -7,12 +7,13 @@ body {
   width: 900px;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  margin-bottom: 150px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 8px;
   position: relative;
+}
+
+.search-bar-style {
+  margin: 200px auto 250px;
+  padding: 20px;
 }
 
 .search-input {

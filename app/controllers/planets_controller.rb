@@ -10,14 +10,35 @@ class PlanetsController < ApplicationController
     else
       @planets = Planet.all
     end
-    @markers = @planets.geocoded.map do |planet|
+    @planets = Planet.geocoded
+    @markers = @planets.map do |planet|
       {
-        lat: planet.latitude,
-        lng: planet.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { planet: planet })
+        lat: rand(-60..60).to_f,
+        lng: rand(-150..150).to_f,
+        info_window: render_to_string(partial: "info_window", locals: { planet: planet }),
+        image_url: "http://res.cloudinary.com/dnkevcp8q/image/upload/v1/development/#{planet.photos.first.key}"
       }
     end
   end
+
+  # def index
+  #   if params[:query].present?
+  #     sql_query = " \
+  #       planets.name @@ :query \
+  #       OR planets.location @@ :query \
+  #     "
+  #     @planets = Planet.where(sql_query, query: "%#{params[:query]}%")
+  #   else
+  #     @planets = Planet.all
+  #   end
+  #   @markers = @planets.geocoded.map do |planet|
+  #     {
+  #       lat: planet.latitude,
+  #       lng: planet.longitude,
+  #       info_window: render_to_string(partial: "info_window", locals: { planet: planet })
+  #     }
+  #   end
+  # end
 
   def show
   end
@@ -62,6 +83,6 @@ class PlanetsController < ApplicationController
   end
 
   def set_params
-    params.require(:planet).permit(:name, :location, :description, photos: [])
+    params.require(:planet).permit(:name, :location, :description, :address, photos: [])
   end
 end
