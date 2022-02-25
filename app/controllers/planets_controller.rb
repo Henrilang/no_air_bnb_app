@@ -13,10 +13,10 @@ class PlanetsController < ApplicationController
     @planets = Planet.geocoded
     @markers = @planets.map do |planet|
       {
-        lat: planet.latitude,
-        lng: planet.longitude,
+        lat: rand(-60..60).to_f,
+        lng: rand(-150..150).to_f,
         info_window: render_to_string(partial: "info_window", locals: { planet: planet }),
-        image_url: helpers.asset_url("#{Cloudinary::Utils.cloudinary_url(planet.photos.first, :format => :png)}")
+        image_url: "http://res.cloudinary.com/dnkevcp8q/image/upload/v1/development/#{planet.photos.first.key}"
       }
     end
   end
