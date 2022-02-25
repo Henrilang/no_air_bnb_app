@@ -43,10 +43,10 @@
 
 #book {
   font-family: $future-font;
-  color: $e-yellow;
+  color: white;
   transition: 1s;
   &:hover {
-    color: white;
+    color: $e-yellow;
   }
 }
 

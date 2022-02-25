@@ -1,13 +1,13 @@
 <div class="newplanet">
   <div class="title" style="text-align:center">
-    <h1>Create a Planet</h1><br>
+    <h1>Create a Planet</h1>
   </div>
   <div class="rounded">
       <%= simple_form_for @planet do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
       <%= f.input :address %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %><br>
       <%= f.submit class: 'btn btn-block', value: 'New Planet' %>
       <% end %>
   </div>
