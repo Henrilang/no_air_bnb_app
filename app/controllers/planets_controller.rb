@@ -1,7 +1,22 @@
 class PlanetsController < ApplicationController
   before_action :set_planet, only: [:show, :edit, :update, :destroy]
   def index
-    @planets = Planet.all
+    if params[:query].present?
+      sql_query = " \
+        planets.name @@ :query \
+        OR planets.location @@ :query \
+      "
+      @planets = Planet.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @planets = Planet.all
+    end
+    @markers = @planets.geocoded.map do |planet|
+      {
+        lat: planet.latitude,
+        lng: planet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { planet: planet })
+      }
+    end
   end
 
   def show

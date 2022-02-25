@@ -2,3 +2,44 @@
 body {
   background-color: rgb(230, 233, 235);
 }
+
+.search-bar {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  margin-bottom: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  position: relative;
+}
+
+.search-input {
+  width: 300px;
+  margin: 20px;
+  color: black;
+}
+
+.search-button {
+  margin: 20px;
+}
+
+.form-control {
+  color: white;
+  background-color: rgba(0,0,0, .3);
+}
+
+.slogan {
+  font-size: 40px;
+  font-weight: 100;
+  position: absolute;
+  top: -50px;
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: #f8bc05;
+  border: 5px solid #f8bc05;
+}

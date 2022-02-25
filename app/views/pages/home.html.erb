@@ -1,3 +1,17 @@
 
 <%#= render "shared/banner" %>
+<div class= "search-bar">
+  <h1 class = "slogan">Let's take off</h1>
+  <div class = "search-input"><%= form_tag planets_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a planet"
+    %>
+  </div>
+  <div class = "search-button">
+    <%= submit_tag "Search", class: "btn" %>
+  <% end %>
+  </div>
+</div>
 <%= render "shared/explore_planets" %>
