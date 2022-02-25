@@ -10,6 +10,13 @@ class PlanetsController < ApplicationController
     else
       @planets = Planet.all
     end
+    @markers = @planets.geocoded.map do |planet|
+      {
+        lat: planet.latitude,
+        lng: planet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { planet: planet })
+      }
+    end
   end
 
   def show

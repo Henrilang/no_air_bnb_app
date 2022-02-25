@@ -6,6 +6,7 @@
       <%= simple_form_for @planet do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
+      <%= f.input :address %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit class: 'btn btn-block', value: 'New Planet' %>
       <% end %>

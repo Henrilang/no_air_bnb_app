@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_23_113913) do
+ActiveRecord::Schema.define(version: 2022_02_24_223152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 2022_02_23_113913) do
     t.string "name"
     t.string "location"
     t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["user_id"], name: "index_planets_on_user_id"
   end
 
