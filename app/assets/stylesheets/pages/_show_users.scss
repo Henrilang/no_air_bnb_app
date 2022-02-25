@@ -5,22 +5,46 @@
   justify-content: center;
 }
 
-.div.user_name {
-  display: inline-block;
+.info-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6em;
+  margin: 50px 0px;
 }
 
-div.user_page {
+
+.user_page {
   background-color: rgba(0, 0, 0, .3);
   justify-content: center;
   border-radius: 8px;
-  padding: 16px;
+  padding: 30px 50px;
+
 }
 
-div.h2 {
+.h2 {
   display: flex;
   align-items: center;
 }
 
-div.backAndCreatebtn {
+.backAndCreatebtn {
   justify-content: center;
+}
+
+.my-planet {
+  margin: 30px 0px;
+}
+
+.my-planet-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-planet-info h4 {
+  justify-items: center;
+}
+
+.my-planet-info p {
+  margin-left: 10px;
+  font-size: x-small;
 }
