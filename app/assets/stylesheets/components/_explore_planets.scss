@@ -311,8 +311,29 @@ transform: translateY(-50%) translateX(0px)  scale(1);
 	transition: 500ms ease-in-out;
 }
 
+.btn-create {
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	background: transparent;
+	border: 2px solid white;
+	box-shadow: 5px 5px 0 white,
+		-5px -5px 0 white,
+		-5px 5px 0 white,
+		5px -5px 0 white;
+	transition: 500ms ease-in-out;
+}
+
 .btn:hover {
 	box-shadow: 20px 5px 0 black, -20px -5px 0 black;
+}
+.btn-create:hover {
+	box-shadow: 20px 5px 0 black, -20px -5px 0 black;
+  color: $e-yellow;
+  border: 2px solid $e-yellow;
 }
 
 button:focus {
